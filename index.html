@@ -1,10 +1,11 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+
     <title>PathAble</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,17 +14,30 @@
         <h1>PathAble</h1>
         <p>Adaptive Indoor Navigation</p>
 
-        <video id="camera"
-               autoplay
-               playsinline
-               muted></video>
+        <div class="camera-frame">
+            <video id="camera"
+                   autoplay
+                   playsinline
+                   muted></video>
 
-        <p id="status">Initialising...</p>
+            <canvas id="detectionCanvas"></canvas>
+        </div>
 
-        <button id="startCamera">Start Camera</button>
+        <p id="status" role="status" aria-live="polite">
+            Loading object detection model...
+        </p>
+
+        <button id="startCamera" disabled>
+            Start Camera
+        </button>
     </main>
 
-    <script src="opencv.js"></script>
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+
+    <!-- COCO-SSD object detection model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3"></script>
+
     <script src="app.js"></script>
 </body>
 </html>
