@@ -1,4 +1,4 @@
-```javascript
+
 const video = document.getElementById("camera");
 const canvas = document.getElementById("detectionCanvas");
 const context = canvas.getContext("2d");
@@ -231,4 +231,3 @@ window.addEventListener("beforeunload", () => {
 
 // Load the model when the page opens.
 loadModel();
-```
