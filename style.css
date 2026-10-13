@@ -1,4 +1,5 @@
 
+/* General page styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,11 +8,18 @@ body {
     color: #172b4d;
 }
 
+/* Main content */
 main {
     max-width: 600px;
     margin: auto;
 }
 
+/* Page title */
+h1 {
+    margin-bottom: 8px;
+}
+
+/* Camera preview */
 video {
     width: 100%;
     background: #172b4d;
@@ -20,17 +28,60 @@ video {
     margin: 20px 0;
 }
 
+/* Camera start button */
 button {
     width: 100%;
+    min-height: 52px;
     padding: 16px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     border: none;
     border-radius: 10px;
     background: #176b67;
     color: white;
+    cursor: pointer;
 }
 
+/* Button interaction */
+button:hover {
+    background: #125550;
+}
+
+button:focus-visible {
+    outline: 3px solid #172b4d;
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Status message */
+#status {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* OpenCV processed image */
 #processedCanvas {
     display: block;
+    width: 100%;
     max-width: 100%;
+    height: auto;
+    background: #172b4d;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
 }
