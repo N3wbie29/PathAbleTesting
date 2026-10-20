@@ -63,7 +63,7 @@
 let isProcessing = false; // Flag to prevent buffer backlog
 
 function connectWebSocket() {
-    ws = new WebSocket('ws://' + LAPTOP_IP + ':8080');
+    ws = new WebSocket('wss://oak-scuba-doornail.ngrok-free.dev');
 
     ws.onopen = () => {
         log("Connected to Python Server!");
